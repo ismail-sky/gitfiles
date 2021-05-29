@@ -1,0 +1,16 @@
+---
+# tasks file for appserver-role
+  - name: installing the package
+    yum: name={{ apachepakg }} state=present
+
+  - name: starting the service
+    service: name={{ apachepakg }} state=started
+
+  - name: copying the configuration file
+    copy: src=httpd.conf dest={{ apacheconf }}
+    notify:
+      - restart apache
+
+  - name: copy the index file with message
+    copy: src=index.html dest={{ apacheindex }}
+

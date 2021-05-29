@@ -1,0 +1,5 @@
+---
+# vars file for appserver-role
+    apachepakg: httpd
+    apacheconf: /etc/httpd/conf/
+    apacheindex: /var/www/html/

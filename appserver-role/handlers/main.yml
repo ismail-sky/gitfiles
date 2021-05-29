@@ -1,0 +1,4 @@
+---
+# handlers file for appserver-role
+    - name: restart apache
+      service: name={{ apachepakg }} state=restarted
